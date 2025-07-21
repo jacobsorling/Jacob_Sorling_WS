@@ -1,6 +1,6 @@
 # Jacob Video Intro Site
 
-This is a simple landing site with an autoplay video that transitions into a still image, just like [melissamahoney.me](https://melissamahoney.me), built with HTML, CSS, and JavaScript.
+This is a simple landing site with an autoplay video that transitions into a still image, built with HTML, CSS, and JavaScript.
 
 ## 📂 Structure
 ```
