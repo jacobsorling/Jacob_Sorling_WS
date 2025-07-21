@@ -15,11 +15,6 @@ This is a simple landing site with an autoplay video that transitions into a sti
 └── README.md
 ```
 
-## 🚀 Hosting
-Use GitHub Pages:
-1. Go to **Settings > Pages**
-2. Choose **Deploy from branch** → `main` → `/ (root)`
-3. Your site will be live at: `https://<yourusername>.github.io/<repo-name>/`
 
 ## ⚠️ Image and Video Use
 The media content in this project (video and still image) is personal and **not licensed for reuse**. The code is open source (MIT).
