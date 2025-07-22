@@ -38,6 +38,37 @@ html, body {
   background-color: black;
 }
 
+/* Header Bar */
+#site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #44646fcc; /* translucent teal */
+  backdrop-filter: blur(8px);
+  z-index: 100;
+  padding: 0.8rem 2rem;
+}
+
+#site-header nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+#site-header nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+#site-header nav ul li a:hover {
+  color: #a7b8be;
+}
+
 /* Scrollable Content After Video */
 #main-scroll.hidden {
   display: none;
@@ -48,6 +79,7 @@ html, body {
   z-index: 1;
   overflow-y: auto;
   height: 100vh;
+  padding-top: 60px; /* space for fixed header */
 }
 
 /* Each Fullscreen Section */
@@ -61,6 +93,7 @@ html, body {
   font-weight: bold;
   transition: background-color 1s ease;
   padding: 2rem;
+  box-sizing: border-box;
 }
 
 /* Background colors for each section */
