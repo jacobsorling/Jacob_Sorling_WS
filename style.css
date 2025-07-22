@@ -1,50 +1,89 @@
-/* style.css */
-
-body, html {
+/* Base Reset */
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
   height: 100%;
-  overflow-x: hidden;
-  font-family: sans-serif;
-}
-
-.video-header {
-  position: relative;
   width: 100%;
-  height: 100vh;
   overflow: hidden;
+  background-color: black;
+  font-family: 'Helvetica Neue', sans-serif;
+  color: white;
 }
 
-.video-header video,
-.video-header img {
+/* --- Intro Video Setup --- */
+#intro-video-wrapper,
+#main-content {
   position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#intro-video-wrapper {
+  background-color: black;
+  z-index: 10;
+}
+
+/* Wrap video for vertical centering on portrait */
+.video-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+/* Default: desktop + laptop styling */
+#intro-video {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  top: 0;
-  left: 0;
 }
 
-#fallbackImage {
+/* --- Responsive Handling --- */
+
+/* Portrait mode (phones held vertically) */
+@media screen and (orientation: portrait) and (max-width: 768px) {
+  #intro-video {
+    object-fit: contain;
+  }
+}
+
+/* Landscape mode on phones */
+@media screen and (orientation: landscape) and (max-height: 500px) {
+  #intro-video {
+    object-fit: contain;
+  }
+}
+
+/* --- Main Page Styling --- */
+#main-content {
+  display: none;
   opacity: 0;
-  transition: opacity 1.5s ease-in-out;
-  pointer-events: none;
-  z-index: 2;
+  transition: opacity 2s ease;
+  overflow-y: auto;
+  padding: 2rem;
+  background-color: black;
+  text-align: center;
 }
 
-.scroll-cue {
-  position: absolute;
-  bottom: 2rem;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 2rem;
-  color: white;
-  animation: bounce 2s infinite;
-  z-index: 3;
-  opacity: 0.8;
+.featured-photo {
+  max-width: 90%;
+  height: auto;
+  border-radius: 20px;
+  margin-bottom: 1.5rem;
 }
 
-@keyframes bounce {
-  0%, 100% { transform: translateX(-50%) translateY(0); }
-  50% { transform: translateX(-50%) translateY(10px); }
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  font-size: 1.2rem;
+  color: #ccc;
 }
