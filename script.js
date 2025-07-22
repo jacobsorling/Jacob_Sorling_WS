@@ -8,16 +8,16 @@ document.addEventListener("DOMContentLoaded", () => {
   document.body.style.overflow = "hidden";
 
   video.addEventListener("ended", () => {
-    // Fade out the video wrapper
     videoWrapper.style.transition = "opacity 1.5s ease";
     videoWrapper.style.opacity = 0;
 
-    // After fade, hide video, show main content and header
     setTimeout(() => {
       videoWrapper.style.display = "none";
 
       mainScroll.classList.remove("hidden");
-      header.classList.remove("hidden"); // show header now
+      header.classList.remove("hidden");
+      header.style.display = "";
+
       document.body.style.overflow = "auto";
     }, 1500);
   });

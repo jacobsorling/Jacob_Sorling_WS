@@ -1,10 +1,9 @@
-/* Reset and Base */
+/* Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
 html, body {
   height: 100%;
   width: 100%;
@@ -16,21 +15,17 @@ html, body {
 /* Intro Video */
 #intro-video-wrapper {
   position: fixed;
-  top: 0;
-  left: 0;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: black;
   z-index: 10;
-  width: 100%;
-  height: 100%;
-  background-color: black;
 }
-
 .video-container {
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
 }
-
 #intro-video {
   width: 100%;
   height: 100%;
@@ -38,105 +33,232 @@ html, body {
   background-color: black;
 }
 
-/* Header Bar */
+/* Header */
 #site-header {
   position: fixed;
-  top: 0;
-  left: 0;
+  top: 0; left: 0;
   width: 100%;
-  background-color: #44646fcc; /* translucent teal */
+  background-color: #44646fcc;
   backdrop-filter: blur(8px);
-  z-index: 100;
   padding: 0.8rem 2rem;
+  z-index: 100;
 }
-
-/* Hidden class to toggle visibility */
 #site-header.hidden {
   display: none;
 }
-
-/* Nav fixes for mobile scrolling */
 #site-header nav ul {
   list-style: none;
   display: flex;
   justify-content: center;
   gap: 2rem;
-
   flex-wrap: nowrap;
   overflow-x: auto;
-  -webkit-overflow-scrolling: touch; /* smooth scroll on iOS */
+  -webkit-overflow-scrolling: touch;
 }
-
 #site-header nav ul::-webkit-scrollbar {
-  display: none; /* hide scrollbar */
+  display: none;
 }
-
 #site-header nav ul li a {
   color: white;
-  text-decoration: none;
   font-weight: 600;
   font-size: 1.1rem;
-  transition: color 0.3s ease;
   padding: 0.5rem 1rem;
-  white-space: nowrap; /* prevent wrapping */
+  white-space: nowrap;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
-
 #site-header nav ul li a:hover {
   color: #a7b8be;
 }
 
-/* Scrollable Content After Video */
+/* Main scroll container */
 #main-scroll.hidden {
   display: none;
 }
-
 #main-scroll {
   position: relative;
-  z-index: 1;
-  overflow-y: auto;
   height: 100vh;
-  padding-top: 60px; /* space for fixed header */
+  padding-top: 60px; /* header space */
+  overflow-y: auto;
 }
 
-/* Each Fullscreen Section */
-.scroll-section {
-  height: 100vh;
-  width: 100%;
+/* Sections */
+.page-section {
+  padding: 4rem 2rem;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 2.5rem;
-  font-weight: bold;
-  transition: background-color 1s ease;
-  padding: 2rem;
-  box-sizing: border-box;
+  flex-direction: column;
+  transition: background-color 0.5s ease;
+  scroll-margin-top: 60px; /* for anchor offset */
 }
 
-/* Background colors for each section */
-#section1 {
+/* About Me */
+.about-container {
+  display: flex;
+  max-width: 900px;
+  width: 100%;
+  gap: 3rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.about-photo img {
+  max-width: 300px;
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.2);
+}
+.about-text {
+  flex: 1;
+  font-size: 1.25rem;
+  color: #333;
+}
+.about-text h2 {
+  margin-bottom: 1rem;
+  color: #44646f;
+}
+
+/* Resume */
+.resume-section {
+  background-color: #f7f9fa;
+  color: #333;
+}
+.resume-card {
+  max-width: 600px;
+  background: white;
+  padding: 2rem;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  border-radius: 10px;
+}
+.resume-card h2 {
+  margin-bottom: 1rem;
+}
+.resume-card p {
+  margin-bottom: 0.75rem;
+}
+.btn {
+  display: inline-block;
   background-color: #44646f;
   color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 600;
+  margin-top: 1rem;
+  transition: background-color 0.3s ease;
 }
-
-#section2 {
+.btn:hover {
   background-color: #5d7d89;
+}
+
+/* Videos Gallery */
+.videos-section {
+  background-color: #eef3f6;
+}
+.video-gallery {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  padding: 1rem 0;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+.video-gallery::-webkit-scrollbar {
+  display: none;
+}
+.video-item {
+  min-width: 320px;
+  height: 180px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+}
+.video-item iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Contact Section */
+.contact-section {
+  background-color: #44646f;
   color: white;
+  width: 100%;
+  padding-bottom: 4rem;
 }
-
-#section3 {
+.contact-container {
+  max-width: 600px;
+  width: 100%;
+  padding: 2rem;
+}
+.contact-section h2 {
+  margin-bottom: 1.5rem;
+}
+#contact-form label {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-weight: 600;
+}
+#contact-form input,
+#contact-form textarea {
+  width: 100%;
+  padding: 0.6rem 1rem;
+  margin-bottom: 1.2rem;
+  border-radius: 6px;
+  border: none;
+  font-size: 1rem;
+}
+#contact-form textarea {
+  resize: vertical;
+}
+#contact-form button {
+  background-color: #fff;
+  color: #44646f;
+  padding: 0.8rem 1.8rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+#contact-form button:hover {
   background-color: #a7b8be;
-  color: black;
+  color: #333;
 }
 
-#section4 {
-  background-color: #ffffff;
-  color: black;
+/* Social links below form */
+.social-links {
+  margin-top: 2rem;
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+}
+.social-links a {
+  color: white;
+  font-weight: 600;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+.social-links a:hover {
+  color: #a7b8be;
 }
 
-/* Responsive Typography */
-@media screen and (max-width: 768px) {
-  .scroll-section {
-    font-size: 1.8rem;
+/* Responsive */
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
     text-align: center;
+  }
+  .about-photo img {
+    max-width: 80vw;
+  }
+  .about-text {
+    font-size: 1.1rem;
+  }
+  .video-item {
+    min-width: 90vw;
+    height: 200px;
   }
 }

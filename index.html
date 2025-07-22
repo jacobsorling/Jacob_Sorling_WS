@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jacob Sorling</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jacob Sorling — Portfolio</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -17,23 +17,107 @@
     </div>
   </div>
 
-  <header id="site-header" class="hidden">
+  <header id="site-header" class="hidden" style="display:none;">
     <nav>
       <ul>
-        <li><a href="#section1">About Me</a></li>
-        <li><a href="#section2">Headshots</a></li>
-        <li><a href="#section3">Reel</a></li>
-        <li><a href="#section4">Contact</a></li>
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#resume">Resume</a></li>
+        <li><a href="#videos">Videos</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
   </header>
-  
-  <!-- Main Scrollable Content -->
+
   <main id="main-scroll" class="hidden">
-    <section id="section1" class="scroll-section">Section 1: About Me</section>
-    <section id="section2" class="scroll-section">Section 2: Headshots</section>
-    <section id="section3" class="scroll-section">Section 3: Reel</section>
-    <section id="section4" class="scroll-section">Section 4: Contact</section>
+    <!-- About Me -->
+    <section id="about" class="page-section">
+      <div class="container about-container">
+        <div class="about-photo">
+          <img src="media/jacob_still.png" alt="Jacob Sorling Photo" />
+        </div>
+        <div class="about-text">
+          <h2>About Me</h2>
+          <p>
+            Hello! I’m Jacob Sorling, an actor with experience in theater, film, and commercials.
+            Passionate about storytelling and bringing characters to life.
+            [Add more personalized bio here.]
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Resume -->
+    <section id="resume" class="page-section resume-section">
+      <div class="container">
+        <h2>Resume</h2>
+        <div class="resume-card">
+          <p><strong>Experience:</strong> [Add your acting roles, training, awards]</p>
+          <p><strong>Skills:</strong> [List key skills or training]</p>
+          <p><strong>Contact:</strong> [Optional quick contact details]</p>
+          <a href="media/Jacob_Sorling_Resume.pdf" class="btn" target="_blank" rel="noopener">Download Resume (PDF)</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Videos Gallery -->
+    <section id="videos" class="page-section videos-section">
+      <div class="container">
+        <h2>Videos</h2>
+        <div class="video-gallery">
+          <!-- Repeat these video-item divs with your own YouTube embed links -->
+          <div class="video-item">
+            <iframe
+              src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+              title="Video 1"
+              frameborder="0"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div class="video-item">
+            <iframe
+              src="https://www.youtube.com/embed/oHg5SJYRHA0"
+              title="Video 2"
+              frameborder="0"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div class="video-item">
+            <iframe
+              src="https://www.youtube.com/embed/ZZ5LpwO-An4"
+              title="Video 3"
+              frameborder="0"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <!-- Add more as needed -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="page-section contact-section">
+      <div class="container contact-container">
+        <h2>Contact Me</h2>
+        <form id="contact-form" action="#" method="POST">
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" required />
+
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required />
+
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+
+          <button type="submit" class="btn">Send Message</button>
+        </form>
+
+        <div class="social-links">
+          <a href="https://instagram.com/jacobsorling" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://twitter.com/jacobsorling" target="_blank" rel="noopener">Twitter</a>
+          <a href="mailto:jacob@example.com">Email</a>
+        </div>
+      </div>
+    </section>
   </main>
 
   <script src="script.js"></script>
