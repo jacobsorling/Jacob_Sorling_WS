@@ -38,8 +38,9 @@ html, body {
   background-color: black;
 }
 
-/* Header Bar */
+/* Header Bar - hidden initially */
 #site-header {
+  display: none; /* hidden during video */
   position: fixed;
   top: 0;
   left: 0;
