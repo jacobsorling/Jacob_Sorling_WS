@@ -51,11 +51,20 @@ html, body {
   padding: 0.8rem 2rem;
 }
 
+/* Nav fixes for mobile scrolling */
 #site-header nav ul {
   list-style: none;
   display: flex;
   justify-content: center;
   gap: 2rem;
+
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch; /* smooth scroll on iOS */
+}
+
+#site-header nav ul::-webkit-scrollbar {
+  display: none; /* hide scrollbar */
 }
 
 #site-header nav ul li a {
@@ -64,6 +73,8 @@ html, body {
   font-weight: 600;
   font-size: 1.1rem;
   transition: color 0.3s ease;
+  padding: 0.5rem 1rem;
+  white-space: nowrap; /* prevent wrapping */
 }
 
 #site-header nav ul li a:hover {
