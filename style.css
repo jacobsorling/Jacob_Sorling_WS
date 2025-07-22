@@ -1,4 +1,4 @@
-/* Base Reset */
+/* Global Reset */
 * {
   margin: 0;
   padding: 0;
@@ -24,12 +24,13 @@ html, body {
   height: 100%;
 }
 
+/* Background behind video */
 #intro-video-wrapper {
   background-color: black;
   z-index: 10;
 }
 
-/* Wrap video for vertical centering on portrait */
+/* Center video inside wrapper */
 .video-container {
   display: flex;
   align-items: center;
@@ -37,30 +38,15 @@ html, body {
   height: 100%;
 }
 
-/* Default: desktop + laptop styling */
+/* Always show full video frame */
 #intro-video {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  background-color: black;
 }
 
-/* --- Responsive Handling --- */
-
-/* Portrait mode (phones held vertically) */
-@media screen and (orientation: portrait) and (max-width: 768px) {
-  #intro-video {
-    object-fit: contain;
-  }
-}
-
-/* Landscape mode on phones */
-@media screen and (orientation: landscape) and (max-height: 500px) {
-  #intro-video {
-    object-fit: contain;
-  }
-}
-
-/* --- Main Page Styling --- */
+/* --- Main Content Styling --- */
 #main-content {
   display: none;
   opacity: 0;
@@ -71,6 +57,7 @@ html, body {
   text-align: center;
 }
 
+/* Featured photo styling */
 .featured-photo {
   max-width: 90%;
   height: auto;
@@ -78,6 +65,7 @@ html, body {
   margin-bottom: 1.5rem;
 }
 
+/* Typography */
 h1 {
   font-size: 2.5rem;
   margin-bottom: 0.5rem;
@@ -86,4 +74,19 @@ h1 {
 p {
   font-size: 1.2rem;
   color: #ccc;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  .featured-photo {
+    max-width: 100%;
+  }
 }

@@ -3,16 +3,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jacob Intro</title>
+  <title>Jacob Sorling</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="video-header">
-    <video id="introVideo" autoplay muted playsinline>
-      <source src="media/opening_video.mov" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
-    <img id="fallbackImage" src="media/jacob_still.jpg" alt="Header Still" />
+
+  <!-- Intro Video -->
+  <div id="intro-video-wrapper">
+    <div class="video-container">
+      <video id="intro-video" autoplay muted playsinline>
+        <source src="media/opening_video.mov" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+
+  <!-- Main Content (hidden until video ends) -->
+  <div id="main-content">
+    <img src="media/jacob_still.png" alt="Jacob Still" class="featured-photo" />
+    <h1>Jacob Sorling</h1>
+    <p>Actor · Storyteller · Human</p>
     <div class="scroll-cue">&#8595;</div>
   </div>
 
