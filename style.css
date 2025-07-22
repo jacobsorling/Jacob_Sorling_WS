@@ -38,9 +38,8 @@ html, body {
   background-color: black;
 }
 
-/* Header Bar - hidden initially */
+/* Header Bar */
 #site-header {
-  display: none; /* hidden during video */
   position: fixed;
   top: 0;
   left: 0;
@@ -49,6 +48,11 @@ html, body {
   backdrop-filter: blur(8px);
   z-index: 100;
   padding: 0.8rem 2rem;
+}
+
+/* Hidden class to toggle visibility */
+#site-header.hidden {
+  display: none;
 }
 
 /* Nav fixes for mobile scrolling */

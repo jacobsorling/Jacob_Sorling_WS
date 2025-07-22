@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
       videoWrapper.style.display = "none";
 
       mainScroll.classList.remove("hidden");
-      header.style.display = "block"; // show header now
+      header.classList.remove("hidden"); // show header now
       document.body.style.overflow = "auto";
     }, 1500);
   });
