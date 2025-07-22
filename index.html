@@ -7,8 +7,7 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-  <!-- Intro Video -->
+  <!-- Intro Video Wrapper -->
   <div id="intro-video-wrapper">
     <div class="video-container">
       <video id="intro-video" autoplay muted playsinline>
@@ -18,13 +17,13 @@
     </div>
   </div>
 
-  <!-- Main Content (hidden until video ends) -->
-  <div id="main-content">
-    <img src="media/jacob_still.png" alt="Jacob Still" class="featured-photo" />
-    <h1>Jacob Sorling</h1>
-    <p>Actor · Storyteller · Human</p>
-    <div class="scroll-cue">&#8595;</div>
-  </div>
+  <!-- Main Scrollable Content -->
+  <main id="main-scroll" class="hidden">
+    <section id="section1" class="scroll-section">Section 1: About Me</section>
+    <section id="section2" class="scroll-section">Section 2: Headshots</section>
+    <section id="section3" class="scroll-section">Section 3: Reel</section>
+    <section id="section4" class="scroll-section">Section 4: Contact</section>
+  </main>
 
   <script src="script.js"></script>
 </body>

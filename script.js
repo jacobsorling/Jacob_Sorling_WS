@@ -1,12 +1,23 @@
-// script.js
+document.addEventListener("DOMContentLoaded", () => {
+  const videoWrapper = document.getElementById("intro-video-wrapper");
+  const video = document.getElementById("intro-video");
+  const mainScroll = document.getElementById("main-scroll");
 
-const video = document.getElementById("introVideo");
-const fallback = document.getElementById("fallbackImage");
+  // Disable scrolling while video plays
+  document.body.style.overflow = "hidden";
 
-video.addEventListener("ended", () => {
-  fallback.style.opacity = 1; // Fade in the still image
-});
+  video.addEventListener("ended", () => {
+    // Fade out the video wrapper
+    videoWrapper.style.transition = "opacity 1.5s ease";
+    videoWrapper.style.opacity = 0;
 
-video.addEventListener("error", () => {
-  fallback.style.opacity = 1; // Backup if video can't play
+    // After fade, hide video and show main content
+    setTimeout(() => {
+      videoWrapper.style.display = "none";
+
+      // Show main content and enable scroll
+      mainScroll.classList.remove("hidden");
+      document.body.style.overflow = "auto";
+    }, 1500);
+  });
 });

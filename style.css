@@ -1,4 +1,4 @@
-/* Global Reset */
+/* Reset and Base */
 * {
   margin: 0;
   padding: 0;
@@ -8,37 +8,29 @@
 html, body {
   height: 100%;
   width: 100%;
-  overflow: hidden;
-  background-color: black;
   font-family: 'Helvetica Neue', sans-serif;
-  color: white;
+  scroll-behavior: smooth;
+  overflow: hidden;
 }
 
-/* --- Intro Video Setup --- */
-#intro-video-wrapper,
-#main-content {
-  position: absolute;
+/* Intro Video */
+#intro-video-wrapper {
+  position: fixed;
   top: 0;
   left: 0;
+  z-index: 10;
   width: 100%;
   height: 100%;
-}
-
-/* Background behind video */
-#intro-video-wrapper {
   background-color: black;
-  z-index: 10;
 }
 
-/* Center video inside wrapper */
 .video-container {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   height: 100%;
 }
 
-/* Clean video display: no crop, no zoom */
 #intro-video {
   width: 100%;
   height: 100%;
@@ -46,26 +38,56 @@ html, body {
   background-color: black;
 }
 
-/* --- Main Content Styling --- */
-#main-content {
+/* Scrollable Content After Video */
+#main-scroll.hidden {
   display: none;
-  opacity: 0;
-  transition: opacity 2s ease;
+}
+
+#main-scroll {
+  position: relative;
+  z-index: 1;
   overflow-y: auto;
-  padding: 2rem;
-  background-color: black;
-  text-align: center;
+  height: 100vh;
 }
 
-/* Featured photo styling */
-.featured-photo {
-  max-width: 90%;
-  height: auto;
-  border-radius: 20px;
-  margin-bottom: 1.5rem;
-}
-
-/* Typography */
-h1 {
+/* Each Fullscreen Section */
+.scroll-section {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 2.5rem;
+  font-weight: bold;
+  transition: background-color 1s ease;
+  padding: 2rem;
+}
+
+/* Background colors for each section */
+#section1 {
+  background-color: #44646f;
+  color: white;
+}
+
+#section2 {
+  background-color: #5d7d89;
+  color: white;
+}
+
+#section3 {
+  background-color: #a7b8be;
+  color: black;
+}
+
+#section4 {
+  background-color: #ffffff;
+  color: black;
+}
+
+/* Responsive Typography */
+@media screen and (max-width: 768px) {
+  .scroll-section {
+    font-size: 1.8rem;
+    text-align: center;
+  }
 }
